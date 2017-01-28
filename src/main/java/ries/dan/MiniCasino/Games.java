@@ -7,10 +7,13 @@ import java.util.ArrayList;
  */
 public class Games {
 
+    Deck deck = new Deck();
+
     public Games() {
-        Deck deck = new Deck();
+        this.deck = deck;
         int maxBet = 500;
-        ArrayList<Card> Playerhand = new ArrayList<Card>();
-        ArrayList<Card> Dealerhand = new ArrayList<Card>();
     }
+
+
+
 }

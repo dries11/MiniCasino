@@ -15,6 +15,7 @@ public class Player {
     }
 
     public int getAmountOfMoney() {
+
         return amountOfMoney;
     }
 
@@ -24,9 +25,5 @@ public class Player {
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }
