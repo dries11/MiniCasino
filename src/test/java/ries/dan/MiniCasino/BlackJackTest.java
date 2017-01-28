@@ -58,8 +58,8 @@ public class BlackJackTest {
 
     @Test
     public void checkHandsTest(){
-        String expected = "Player Wins";
-        String actual = bj.checkHands(dealerHand,playerHand);
+        int expected = 3;
+        int actual = bj.checkHands(dealerHand,playerHand);
         Assert.assertEquals("We expect to get player wins based off of preset cards in test", expected, actual);
     }
 

@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class IO {
 
     Scanner input = new Scanner(System.in);
-    BlackJack blackJack = new BlackJack();
+
     GoFish goFish = new GoFish();
 
 
@@ -61,6 +61,6 @@ public class IO {
 
 
 
-    public void goFishCues(){}
+    //public void goFishCues(){}
 
 }
