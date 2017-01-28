@@ -4,10 +4,10 @@ package ries.dan.MiniCasino;
  * Created by danries on 1/27/17.
  */
 public enum Suit {
-    HEART("1"),
-    SPADE("2"),
-    DIAMOND("3"),
-    CLUB("4");
+    HEART("HEART"),
+    SPADE("SPADE"),
+    DIAMOND("DIAMOND"),
+    CLUB("CLUB");
 
     private String val;
 
@@ -15,7 +15,7 @@ public enum Suit {
         this.val = val;
     }
 
-    public String getVal() {
+    public String getValue() {
         return this.val;
     }
 }

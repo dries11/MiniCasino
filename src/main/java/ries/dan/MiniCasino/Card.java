@@ -20,5 +20,10 @@ public class Card {
         return suit;
     }
 
-
+    public String displayCard(){
+        String suit = this.getSuit().getValue();
+        String rank = this.getRank().getValue();
+        String card = (rank + " of " + suit);
+        return card;
+    }
 }

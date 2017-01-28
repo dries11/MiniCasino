@@ -17,6 +17,7 @@ public class Deck {
                 deck.add(new Card(rank, suit));
             }
         }
+        Collections.shuffle(deck);
     }
 
     public ArrayList<Card> getDeck() {
@@ -25,9 +26,8 @@ public class Deck {
 
     public Card drawCard(){
         Card currentCard;
-        int index = (int)(Math.ceil(Math.random()*deck.size()));
-        currentCard = deck.get(index);
-        deck.remove(index);
+        currentCard = deck.get(0);
+        deck.remove(0);
         return currentCard;
     }
 

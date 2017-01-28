@@ -8,13 +8,10 @@ import java.util.ArrayList;
 public class Player {
     String name;
     int amountOfMoney;
-    ArrayList<Card> hand = new ArrayList<Card>();
-
 
     public Player(String name,int amountOfMoney){
         this.name = name;
         this.amountOfMoney = amountOfMoney;
-        this.hand = hand;
     }
 
     public int getAmountOfMoney() {

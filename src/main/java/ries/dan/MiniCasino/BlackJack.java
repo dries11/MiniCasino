@@ -9,10 +9,10 @@ public class BlackJack extends Games{
 
     Games BlackJack = new Games();
 
-    public ArrayList deal(){
-        ArrayList hand = new ArrayList();
-        for (int i = 0; i < 2; i++){
 
-        }
-    }
+//    public ArrayList deal(){
+//        for (int i = 0; i < 2; i++){
+//
+//        }
+//    }
 }
