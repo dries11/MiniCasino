@@ -1,5 +1,6 @@
 package ries.dan.MiniCasino;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -10,12 +11,13 @@ public class IO {
     Scanner input = new Scanner(System.in);
 
     GoFish goFish = new GoFish();
+    Card card;
 
 
     public int pickAGame(){
         System.out.println("Pick a game to play");
         displayBreak();
-        System.out.println("1. BlackJack \n 2. Go Fish (Family Friendly)");
+        System.out.println("1. BlackJack (Family Friendly)\n2. Go Fish (Family Friendly)");
         int choice = input.nextInt();
         return choice;
     }
@@ -57,6 +59,13 @@ public class IO {
     public void displayCardAmount(int playerAmount, int dealerAmount){
         System.out.println("You have " + playerAmount);
         System.out.println("The Dealer has " + dealerAmount);
+    }
+
+    public void displayAllCards(ArrayList<Card> cards){
+        for (int i = 0; i < cards.size(); i++){
+            System.out.print(" " + cards.get(i).displayCard());
+        }
+        System.out.println();
     }
 
 
