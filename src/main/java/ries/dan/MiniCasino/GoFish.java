@@ -21,7 +21,11 @@ public class GoFish extends Games {
 
     public boolean checkForBook(ArrayList<Card> hand){
         for (Card card : hand){
-            if (card)
+            if (card.getRank().equals("")){
+                return false;
+            }
         }
+        return true;
     }
+
 }

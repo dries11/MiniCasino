@@ -34,7 +34,7 @@ public class GoFishTest {
     @Test
     public void checkForBookTest(){
         boolean expected = true;
-        boolean actual = ;
+        boolean actual = goFish.checkForBook(hand);
         Assert.assertEquals("We expect to get true because four of the same kind were initialized", expected,actual);
     }
 
