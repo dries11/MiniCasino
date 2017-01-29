@@ -22,4 +22,21 @@ public class GoFishTest {
         Assert.assertEquals("We expect to get the first deal size of 7 per rules of gofish",expected,actual);
     }
 
+    @Before public void initialize(){
+        hand.add(new Card(Rank.EIGHT,Suit.DIAMOND));
+        hand.add(new Card(Rank.EIGHT,Suit.HEART));
+        hand.add(new Card(Rank.EIGHT,Suit.CLUB));
+        hand.add(new Card(Rank.EIGHT,Suit.SPADE));
+        hand.add(new Card(Rank.TEN, Suit.SPADE));
+        hand.add(new Card(Rank.NINE,Suit.HEART));
+    }
+
+    @Test
+    public void checkForBookTest(){
+        boolean expected = true;
+        boolean actual = ;
+        Assert.assertEquals("We expect to get true because four of the same kind were initialized", expected,actual);
+    }
+
+
 }

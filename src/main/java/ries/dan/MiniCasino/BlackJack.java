@@ -1,7 +1,6 @@
 package ries.dan.MiniCasino;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  * Created by danries on 1/27/17.
@@ -10,7 +9,7 @@ public class BlackJack extends Games{
 
     Games BlackJack = new Games();
 
-    IO io = new IO();
+    IOBlackJack ioBlackJack = new IOBlackJack();
 
     ArrayList<Card> playerHand = new ArrayList<Card>();
     ArrayList<Card> dealerHand = new ArrayList<Card>();
@@ -23,20 +22,20 @@ public class BlackJack extends Games{
             dealerHand = deal();
             boolean playing = true;
 
-            io.displayCardAmount(calculateCardAmount(playerHand), calculateCardAmount(dealerHand));
+            ioBlackJack.displayCardAmount(calculateCardAmount(playerHand), calculateCardAmount(dealerHand));
 
             while (playing) {
 
                 int condition = checkHands(dealerHand, playerHand);
 
                 if (condition == 2) {
-                    io.dealerWins();
+                    ioBlackJack.dealerWins();
                     playing = false;
                 } else if (condition == 3) {
-                    io.playerWins();
+                    ioBlackJack.playerWins();
                     playing = false;
                 }
-                if (io.hitOrStay() == 1) {
+                if (ioBlackJack.hitOrStay() == 1) {
                     playerHand.add(deck.drawCard());
                 }
                 if (aiDealer() == 0) {
@@ -45,7 +44,7 @@ public class BlackJack extends Games{
 
             }
         }
-        while(io.playAgain(io.promptPlayAgain()));
+        while(ioBlackJack.playAgain(ioBlackJack.promptPlayAgain()));
     }
 
 

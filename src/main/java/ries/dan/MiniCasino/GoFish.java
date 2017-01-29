@@ -18,4 +18,10 @@ public class GoFish extends Games {
         }
         return hand;
     }
+
+    public boolean checkForBook(ArrayList<Card> hand){
+        for (Card card : hand){
+            if (card)
+        }
+    }
 }

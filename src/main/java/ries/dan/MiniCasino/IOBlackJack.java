@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Created by danries on 1/27/17.
  */
-public class IO {
+public class IOBlackJack {
 
     Scanner input = new Scanner(System.in);
 

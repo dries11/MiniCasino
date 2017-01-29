@@ -26,4 +26,6 @@ public class Card {
         String card = (rank + " of " + suit);
         return card;
     }
+
+
 }

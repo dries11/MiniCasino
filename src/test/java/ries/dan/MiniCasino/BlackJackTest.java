@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class BlackJackTest {
 
     BlackJack bj = new BlackJack();
-    IO inpurt = new IO();
+    IOBlackJack inpurt = new IOBlackJack();
 
     ArrayList<Card> playerHand = new ArrayList<Card>();
     ArrayList<Card> dealerHand = new ArrayList<Card>();

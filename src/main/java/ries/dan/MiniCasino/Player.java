@@ -7,20 +7,10 @@ import java.util.ArrayList;
  */
 public class Player {
     String name;
-    int amountOfMoney;
 
-    public Player(String name,int amountOfMoney){
+
+    public Player(String name){
         this.name = name;
-        this.amountOfMoney = amountOfMoney;
-    }
-
-    public int getAmountOfMoney() {
-
-        return amountOfMoney;
-    }
-
-    public void setAmountOfMoney(int amountOfMoney) {
-        this.amountOfMoney = amountOfMoney;
     }
 
     public String getName() {

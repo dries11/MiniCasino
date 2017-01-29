@@ -11,7 +11,6 @@ public class Games {
 
     public Games() {
         this.deck = deck;
-        int maxBet = 500;
     }
 
 

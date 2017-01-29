@@ -10,23 +10,8 @@ import org.junit.Test;
 public class PlayerTest {
 
 
-    Player player = new Player("Dan",1000000);
+    Player player = new Player("Dan");
 
-
-    @Test
-    public void getAmountofMoneyTEST(){
-        int expected = 1000000;
-        int actual = player.getAmountOfMoney();
-        Assert.assertEquals("We expect to get the amount of money the player has back",expected,actual);
-    }
-
-    @Test
-    public void setAmountofMoneyTEST(){
-        player.setAmountOfMoney(player.getAmountOfMoney() - 950000);
-        int expected = 50000;
-        int actual = player.getAmountOfMoney();
-        Assert.assertEquals("We expect to be able to subtract the amount of money via Bets", expected, actual);
-    }
 
     @Test
     public void getNameTEST(){
