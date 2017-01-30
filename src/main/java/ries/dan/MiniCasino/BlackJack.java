@@ -7,15 +7,14 @@ import java.util.ArrayList;
  */
 public class BlackJack extends Games{
 
-    Games BlackJack = new Games();
+    private Games BlackJack = new Games();
 
-    IOBlackJack ioBlackJack = new IOBlackJack();
+    private IOBlackJack ioBlackJack = new IOBlackJack();
 
-    ArrayList<Card> playerHand = new ArrayList<Card>();
-    ArrayList<Card> dealerHand = new ArrayList<Card>();
+    public boolean runGame(){
+        ArrayList<Card> playerHand;
+        ArrayList<Card> dealerHand;
 
-
-    public void runGame(){
         do {
             Deck deck = new Deck();
             playerHand = deal();
@@ -45,10 +44,11 @@ public class BlackJack extends Games{
             }
         }
         while(ioBlackJack.playAgain(ioBlackJack.promptPlayAgain()));
+        return false;
     }
 
 
-    public ArrayList<Card> deal(){
+    protected ArrayList<Card> deal(){
         ArrayList<Card> hand = new ArrayList<Card>();
         for (int i = 0; i < 2; i ++){
             hand.add(BlackJack.deck.drawCard());
@@ -56,10 +56,10 @@ public class BlackJack extends Games{
         return hand;
     }
 
-    public int checkHands(ArrayList<Card> dealer, ArrayList<Card> player){
+    protected int checkHands(ArrayList<Card> dealer, ArrayList<Card> player){
         int condition = 1; //Play On
         if (didWin(dealer) || didBreak(player)){
-            condition = 2; //Dealer Wins
+            condition = 2; //dealer Wins
         }
         else if (didWin(player) || didBreak(dealer)){
             condition = 3; //Player Wins
@@ -67,7 +67,7 @@ public class BlackJack extends Games{
         return condition;
     }
 
-    public int calculateCardAmount(ArrayList<Card> hand){
+    protected int calculateCardAmount(ArrayList<Card> hand){
         int amount = 0;
         String value;
         for (int i = 0; i < hand.size(); i++){
@@ -84,7 +84,7 @@ public class BlackJack extends Games{
         return amount;
     }
 
-    public boolean didWin(ArrayList<Card> hand){
+    protected boolean didWin(ArrayList<Card> hand){
         boolean status = false;
         if (calculateCardAmount(hand) == 21){
             status = true;
@@ -92,7 +92,7 @@ public class BlackJack extends Games{
         return status;
     }
 
-    public boolean didBreak(ArrayList<Card> hand){
+    protected boolean didBreak(ArrayList<Card> hand){
         boolean status = true;
         if (calculateCardAmount(hand) <= 21){
             status = false;
@@ -100,7 +100,7 @@ public class BlackJack extends Games{
         return status;
     }
 
-    public int aiDealer(){
+    protected int aiDealer(){
         double choice = (Math.random() + 1);
         if (choice < .75){//Stay
             return 1;

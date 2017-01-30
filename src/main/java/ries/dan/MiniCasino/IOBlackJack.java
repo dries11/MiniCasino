@@ -13,23 +13,10 @@ public class IOBlackJack extends IO {
     GoFish goFish = new GoFish();
     Card card;
 
-
-    public int pickAGame(){
-        System.out.println("Pick a game to play");
-        displayBreak();
-        System.out.println("1. BlackJack (Family Friendly)\n2. Go Fish (Family Friendly)");
-        int choice = input.nextInt();
-        return choice;
-    }
-
-    public void displayBreak(){
-        System.out.println("=====================");
-    }
-
     public int promptPlayAgain(){
         System.out.println("Would you like to play again?");
         displayBreak();
-        System.out.println("1. Yes \n 2. No");
+        System.out.println("1. Yes\n 2. No");
         return input.nextInt();
     }
 
@@ -58,7 +45,7 @@ public class IOBlackJack extends IO {
 
     public void displayCardAmount(int playerAmount, int dealerAmount){
         System.out.println("You have " + playerAmount);
-        System.out.println("The Dealer has " + dealerAmount);
+        System.out.println("The dealer has " + dealerAmount);
     }
 
     public void displayAllCards(ArrayList<Card> cards){
@@ -67,9 +54,4 @@ public class IOBlackJack extends IO {
         }
         System.out.println();
     }
-
-
-
-    //public void goFishCues(){}
-
 }

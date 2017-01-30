@@ -13,6 +13,7 @@ public class GoFishTest {
 
     GoFish goFish = new GoFish();
     ArrayList<Card> hand = new ArrayList<Card>();
+    Deck deck = new Deck();
 
     @Test
     public void dealTest(){
@@ -36,6 +37,12 @@ public class GoFishTest {
         boolean expected = true;
         boolean actual = goFish.checkForBook(hand);
         Assert.assertEquals("We expect to get true because four of the same kind were initialized", expected,actual);
+    }
+
+    @Test
+    public void countNumberOfCardsRemainingInDeckTEST(){
+        int expected = 52;
+        int actual = goFish.countNumberofCardsRemainingInDeck(deck.getDeck());
     }
 
 

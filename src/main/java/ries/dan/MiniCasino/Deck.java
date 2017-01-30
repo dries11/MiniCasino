@@ -8,10 +8,10 @@ import java.util.*;
  */
 public class Deck {
 
-    private ArrayList<Card> deck = new ArrayList();
+    private ArrayList<Card> deck = new ArrayList<Card>();
 
 
-    public Deck() {
+    protected Deck() {
         for (Rank rank : Rank.values()) {
             for (Suit suit: Suit.values()){
                 deck.add(new Card(rank, suit));
@@ -20,11 +20,11 @@ public class Deck {
         Collections.shuffle(deck);
     }
 
-    public ArrayList<Card> getDeck() {
+    protected ArrayList<Card> getDeck() {
         return deck;
     }
 
-    public Card drawCard(){
+    protected Card drawCard(){
         Card currentCard;
         currentCard = deck.get(0);
         deck.remove(0);
