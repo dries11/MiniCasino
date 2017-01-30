@@ -23,6 +23,7 @@ public class BlackJack extends Games{
 
             ioBlackJack.displayCardAmount(calculateCardAmount(playerHand), calculateCardAmount(dealerHand));
 
+
             while (playing) {
 
                 int condition = checkHands(dealerHand, playerHand);
@@ -30,9 +31,11 @@ public class BlackJack extends Games{
                 if (condition == 2) {
                     ioBlackJack.dealerWins();
                     playing = false;
+                    break;
                 } else if (condition == 3) {
                     ioBlackJack.playerWins();
                     playing = false;
+                    break;
                 }
                 if (ioBlackJack.hitOrStay() == 1) {
                     playerHand.add(deck.drawCard());

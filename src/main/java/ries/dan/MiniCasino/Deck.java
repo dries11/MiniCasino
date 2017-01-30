@@ -9,6 +9,7 @@ import java.util.*;
 public class Deck {
 
     private ArrayList<Card> deck = new ArrayList<Card>();
+    Card cards;
 
 
     protected Deck() {
@@ -29,6 +30,14 @@ public class Deck {
         currentCard = deck.get(0);
         deck.remove(0);
         return currentCard;
+    }
+
+    protected String displayHand(ArrayList<Card> hand){
+        String cards = "";
+        for (Card card : hand){
+            cards += ("|" + card.displayCard() + "|");
+        }
+        return cards;
     }
 
 

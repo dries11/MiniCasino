@@ -10,9 +10,6 @@ public class IOBlackJack extends IO {
 
     Scanner input = new Scanner(System.in);
 
-    GoFish goFish = new GoFish();
-    Card card;
-
     public int promptPlayAgain(){
         System.out.println("Would you like to play again?");
         displayBreak();
