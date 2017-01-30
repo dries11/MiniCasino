@@ -22,7 +22,7 @@ public class BlackJack extends Games{
             boolean playing = true;
 
             ioBlackJack.displayCardAmount(calculateCardAmount(playerHand), calculateCardAmount(dealerHand));
-
+            ioBlackJack.displayInHand(deck.displayHand(playerHand),deck.displayHand(dealerHand));
 
             while (playing) {
 
@@ -43,6 +43,9 @@ public class BlackJack extends Games{
                 if (aiDealer() == 0) {
                     dealerHand.add(deck.drawCard());
                 }
+
+                ioBlackJack.displayCardAmount(calculateCardAmount(playerHand), calculateCardAmount(dealerHand));
+                ioBlackJack.displayInHand(deck.displayHand(playerHand),deck.displayHand(dealerHand));
 
             }
         }

@@ -11,12 +11,21 @@ public class Main {
     public static void main(String args[]){
 
         boolean inside = true;
+        boolean playing = true;
+        int chosen;
 
         io.welcomeMain();
         Player player = new Player(io.askForName());
 
         while(inside){
-            choice.gameChoice(io.pickAGame());
+            chosen = io.pickAGame();
+            if (chosen == 3){
+                break;
+            }
+            while(playing){
+                playing = choice.gameChoice(chosen);
+            }
+
         }
 
         io.goodbyeMain();
