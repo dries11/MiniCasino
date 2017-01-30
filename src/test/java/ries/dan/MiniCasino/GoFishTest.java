@@ -14,6 +14,7 @@ public class GoFishTest {
     GoFish goFish = new GoFish();
     ArrayList<Card> hand = new ArrayList<Card>();
     Deck deck = new Deck();
+    Card card;
 
     @Test
     public void dealTest(){
@@ -43,6 +44,22 @@ public class GoFishTest {
     public void countNumberOfCardsRemainingInDeckTEST(){
         int expected = 52;
         int actual = goFish.countNumberofCardsRemainingInDeck(deck.getDeck());
+    }
+
+    @Test
+    public void changedBookSizeTEST(){
+        int lastSize = 3;
+        int expected = 6;
+        int actual = goFish.changedBooksSize(hand,lastSize);
+        Assert.assertEquals("We expect to get the new number of books that we have because we want to know the number of books total",expected,actual);
+    }
+
+    @Test
+    public void hasBookTEST(){
+        Rank expected = Rank.EIGHT;
+        ArrayList<Card> actual = goFish.hasBook(hand);
+        Rank actualRank = actual.get(0).getRank();
+        Assert.assertEquals("We should get back the card that we have a book of which was initialized to eight",expected,actual);
     }
 
 
