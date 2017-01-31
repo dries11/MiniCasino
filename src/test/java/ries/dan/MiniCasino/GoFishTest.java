@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by danries on 1/28/17.
@@ -13,8 +14,11 @@ public class GoFishTest {
 
     GoFish goFish = new GoFish();
     ArrayList<Card> hand = new ArrayList<Card>();
+    ArrayList<Card> dealer = new ArrayList<Card>();
     Deck deck = new Deck();
     Card card;
+    HashMap<Rank , Integer> books = new HashMap();
+
 
     @Test
     public void dealTest(){
@@ -34,33 +38,47 @@ public class GoFishTest {
     }
 
     @Test
-    public void checkForBookTest(){
-        boolean expected = true;
-        boolean actual = goFish.checkForBook(hand);
-        Assert.assertEquals("We expect to get true because four of the same kind were initialized", expected,actual);
-    }
-
-    @Test
     public void countNumberOfCardsRemainingInDeckTEST(){
         int expected = 52;
-        int actual = goFish.countNumberofCardsRemainingInDeck(deck.getDeck());
+        int actual = goFish.countNumberOfCardsRemainingInDeck(deck.getDeck());
+    }
+
+
+
+    @Test
+    public void numberOfBooksTEST(){
+        int expected = 1;
+        int actual = goFish.numberOfBooks(hand);
+        Assert.assertEquals("We should get back the number of books of which was initialized to 1",expected,actual);
+    }
+
+    @Before public void createHashMap(){
+        books.put(Rank.EIGHT,4);
+        books.put(Rank.ACE,3);
     }
 
     @Test
-    public void changedBookSizeTEST(){
-        int lastSize = 3;
-        int expected = 6;
-        int actual = goFish.changedBooksSize(hand,lastSize);
-        Assert.assertEquals("We expect to get the new number of books that we have because we want to know the number of books total",expected,actual);
-    }
-
-    @Test
-    public void hasBookTEST(){
+    public void findCardsWithBookTEST(){
         Rank expected = Rank.EIGHT;
-        ArrayList<Card> actual = goFish.hasBook(hand);
-        Rank actualRank = actual.get(0).getRank();
-        Assert.assertEquals("We should get back the card that we have a book of which was initialized to eight",expected,actual);
+        Rank actual = goFish.findCardsWithBook(books);
+        Assert.assertEquals("We expect to get the card that we have a book of",expected,actual);
     }
 
+    @Test
+    public void runGameTest(){
+        boolean expected = false;
+        boolean actual = goFish.runGame();
+        Assert.assertEquals("We expect to get that the game is running",expected,actual);
+    }
 
+    @Before public void addToDealerHand(){
+        dealer.add(new Card(Rank.FIVE,Suit.HEART));
+    }
+
+    @Test
+    public void transferCardTEST(){
+        boolean expected = false;
+        boolean actual = goFish.transferCard(hand,dealer,Rank.EIGHT);
+        Assert.assertEquals("We expect the card to transfer hands over from hand to dealer hand",expected,actual);
+    }
 }
