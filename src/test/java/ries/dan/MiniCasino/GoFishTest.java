@@ -77,7 +77,7 @@ public class GoFishTest {
 
     @Test
     public void transferCardTEST(){
-        boolean expected = false;
+        boolean expected = true;
         boolean actual = goFish.transferCard(hand,dealer,Rank.EIGHT);
         Assert.assertEquals("We expect the card to transfer hands over from hand to dealer hand",expected,actual);
     }

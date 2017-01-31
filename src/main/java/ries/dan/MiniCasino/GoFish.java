@@ -3,6 +3,7 @@ package ries.dan.MiniCasino;
 import java.security.Key;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.function.BiConsumer;
 
@@ -29,6 +30,20 @@ public class GoFish extends Games {
         dealerHand = deal();
 
         while (playing){
+
+            ioGoFish.displayInHand(deck.displayHand(playerHand));
+
+            int playerBooks = numberOfBooks(playerHand);
+            int dealerBooks = numberOfBooks(dealerHand);
+
+            System.out.println("You have " + playerBooks + " number of books!");
+            System.out.println("The dealer has " + dealerBooks + " number of books!");
+
+            while (transferCard(dealerHand , playerHand, ioGoFish.cardAskedFor(ioGoFish.playerAskForCard()))){
+                if (transferCard(dealerHand, playerHand, findCardsWithBook(books)) == false){
+
+                }
+            }
 
         }
 
@@ -78,18 +93,16 @@ public class GoFish extends Games {
         return deck.size();
     }
 
-    protected boolean transferCard(ArrayList<Card> from, ArrayList<Card> to, Rank rank){
-        boolean hasCard = true;
-        for (Card card : from){
-            if (card.getRank().equals(rank)){
+    protected boolean transferCard(ArrayList<Card> from, ArrayList<Card> to, Rank rank) {
+        boolean hasCard = false;
+        for (Iterator<Card> iterator = from.iterator(); iterator.hasNext(); ) {
+            Card card = iterator.next();
+            if (card.getRank().equals(rank)) {
                 to.add(card);
-                from.remove(card);
-            }
-            else {
-                hasCard = false;
+                iterator.remove();
+                hasCard = true;
             }
         }
         return hasCard;
     }
-
 }

@@ -45,10 +45,6 @@ public class IOBlackJack extends IO {
         System.out.println("The dealer has " + dealerAmount);
     }
 
-    public void displayInHand(String playerHand, String dealerHand){
-        System.out.println("You have: " + playerHand);
-        System.out.println("The dealer has " + dealerHand);
-    }
 
 //    public void displayAllCards(ArrayList<Card> cards){
 //        for (int i = 0; i < cards.size(); i++){

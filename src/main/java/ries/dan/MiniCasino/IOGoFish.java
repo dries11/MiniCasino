@@ -16,6 +16,10 @@ public class IOGoFish extends IO {
         return input.next();
     }
 
+    public void displayInHand(String playerHand){
+        System.out.println("You have: " + playerHand);
+    }
+
     public Rank cardAskedFor(String cardRank){
         Rank askedFor = Rank.ACE;
         cardRank.toLowerCase();

@@ -36,4 +36,9 @@ public class IO {
         System.out.println("Thanks for visiting! Come back soon!");
         displayBreak();
     }
+
+    public void displayInHand(String playerHand, String dealerHand){
+        System.out.println("You have: " + playerHand);
+        System.out.println("The dealer has " + dealerHand);
+    }
 }

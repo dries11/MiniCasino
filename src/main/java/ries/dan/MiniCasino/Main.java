@@ -15,7 +15,6 @@ public class Main {
         int chosen;
 
         io.welcomeMain();
-        Player player = new Player(io.askForName());
 
         while(inside){
             chosen = io.pickAGame();
