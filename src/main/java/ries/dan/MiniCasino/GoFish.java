@@ -20,6 +20,7 @@ public class GoFish extends Games {
     ArrayList<Card> playerBooks = new ArrayList<Card>();
     ArrayList<Card> dealerBooks = new ArrayList<Card>();
     HashMap<Rank , Integer> books = new HashMap();
+    Rank cardAskedFor;
 
 
     public boolean runGame(){
@@ -39,10 +40,17 @@ public class GoFish extends Games {
             System.out.println("You have " + playerBooks + " number of books!");
             System.out.println("The dealer has " + dealerBooks + " number of books!");
 
-            while (transferCard(dealerHand , playerHand, ioGoFish.cardAskedFor(ioGoFish.playerAskForCard()))){
-                if (transferCard(dealerHand, playerHand, findCardsWithBook(books)) == false){
+            cardAskedFor = ioGoFish.cardAskedFor(ioGoFish.playerAskForCard());
 
+            if (transferCard(dealerHand, playerHand, cardAskedFor)){
+                boolean hasCard = true;
+                while (hasCard){
+                    transferCard(dealerHand, playerHand, cardAskedFor);
                 }
+            }
+            else {
+                ioGoFish.playerDoesntHaveCard();
+                playerHand.add(deck.drawCard());
             }
 
         }
